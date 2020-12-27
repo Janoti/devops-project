@@ -2,7 +2,7 @@
 
 ## Para rodar a aplicação localmente em containers Docker:
 
-    * Instale o Docker: ```apt install docker```
+    * Instale o Docker: ``` apt install docker ```
 
     * Clone o repositorio da app
 
@@ -11,7 +11,8 @@
    ``` $make local ```
  
     -- Abra seu navegador e digite: http://127.0.0.1:5000/
-    
+## Makefile contém várias opções. Para saber, execute ``` $make help ```
+
 ## Para rodar localmente no cluster Kubernetes: (TODO)
 
    ``` $make k8s ```

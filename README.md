@@ -36,7 +36,7 @@ Here are the technologies used in this project.
 
 
 ## Getting started
-* Install Kubernetes and minikube,follow the official tutorial >  https://minikube.sigs.k8s.io/docs/start/
+* Install Kubernetes and minikube, follow the official tutorial >  https://minikube.sigs.k8s.io/docs/start/
 * Install an hypervisor, like Virtualbox.
 * Install Docker (ubuntu): 
 >    $ apt install docker
@@ -87,23 +87,7 @@ Here are the technologies used in this project.
 
 ## Links
 
-  - Link of deployed application: (if has been deployed)
-  - Repository: https://link_of_repository
-    - In case of sensitive bugs like security vulnerabilities, please contact
-      YOUR EMAIL directly instead of using issue tracker. We value your effort
-      to improve the security and privacy of this project!
+  - Link of deployed application: (IBM CLOUD and HEROKU)
+  
 
 
-
-
-
-
-    
-    
-## Makefile contém várias opções. Para saber, execute ``` $make help ```
-
-
-      
-## Rotas do app
-
-     -- http://127.0.0.1:5000/ #return cpu and machine stats using psutil python lib

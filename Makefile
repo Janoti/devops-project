@@ -16,6 +16,9 @@ k8s:
 	kubectl expose deployment stats-k8s --type=NodePort --port=5000
 	minikube service stats-k8s 
 
+clean:
+	kubectl delete deployment stats-k8s	
+	kubectl delete service stats-k8s
 help:
 	@echo ''
 	@echo '  local                 build docker --image-- local'

@@ -37,5 +37,11 @@ def index():
     #print("Machine OS: {} \nNode: {} \nRelease: {} \nVersion {} \nArchiteture: {} \nProcessor: {} ".format(system, node, release,version, arch, processor))
     return render_template('stats.html', physical=physical, logical=logical, boot=boot, system=system, node=node, release=release, version=version,arch=arch, processor=processor)
 
+@app.route("/login")
+def login():
+    hello = "Criar uma tela de login"
+    return render_template('login.html', hello=hello)
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
+

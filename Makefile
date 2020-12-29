@@ -5,9 +5,9 @@ local:
 
 dockerrepo:
 	eval $(minikube docker-env)
-	docker tag stats janotijr/stats
-	docker build ./ -t janotijr/stats
-	docker push janotijr/devops-project:stats
+	docker tag stats janotijr/stats_v2
+	docker build ./ -t janotijr/stats_v2
+	docker push janotijr/devops-project:stats_v2
 
 k8s:
 	eval $(minikube docker-env)

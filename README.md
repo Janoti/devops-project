@@ -31,7 +31,7 @@ Here are the technologies used in this project.
 ## Services Used
 
 * Github
-* Docker Hub
+* Docker Hub (https://hub.docker.com/repository/docker/janotijr/devops-project)
 * IBM Cloud
 
 

@@ -1,14 +1,17 @@
+pre-push-build:
+	eval $(minikube docker-env)
+	docker build ./ -t janotijr/devops-project:latest
+
 local:
 	eval $(minikube docker-env)
 	docker build ./ -t  stats
 	docker run -p 5000:5000 stats
 
-dockerrepo:
+do-push:
 	eval $(minikube docker-env)
-	docker tag stats janotijr/stats
-	docker build ./ -t janotijr/stats
-	docker push janotijr/devops-project:stats
-
+	docker push janotijr/devops-project
+	docker tag janotijr/devops-project gcr.io/elemental-day-302121/stats:latest
+	docker push gcr.io/elemental-day-302121/stats:latest
 k8s:
 	eval $(minikube docker-env)
 	minikube start --vm-driver=virtualbox
@@ -18,7 +21,7 @@ k8s:
 
 clean_k8s:
 	kubectl delete deployment stats-k8s	
-	kubectl delete service stats-k8s]
+	kubectl delete service stats-k8s
 
 clean_docker:
 	docker image rm stats -f
@@ -26,7 +29,7 @@ clean_docker:
 
 git:
 	sudo git add *
-	sudo git commit -m "Preguiça, upou com make"
+	sudo git commit -m "Automatico"
 	sudo git push origin master
 
 help:

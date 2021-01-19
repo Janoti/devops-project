@@ -21,11 +21,11 @@ Thanks to visiting me and good coding!
 
 Here are the technologies used in this project.
 
-* python  x.x.x
-* flask x.x.x
-* docker
-* terraform
-* kubernetes
+* python  3
+* flask 1.1.2
+* docker 20.10.2
+* terraform 0.14.4
+* kubernetes 1.16.15-gke.6000
 
 
 ## Services Used
@@ -33,6 +33,7 @@ Here are the technologies used in this project.
 * Github
 * Docker Hub (https://hub.docker.com/repository/docker/janotijr/devops-project)
 * IBM Cloud
+* GCP (Google Cloud Plataform)
 
 
 ## Getting started
@@ -76,8 +77,8 @@ Here are the technologies used in this project.
   |stats-k8s-7448f8cdf6-pfml7 | 1/1 | Running |  0 | 3m9s|
 
       
-   
-      
+## RUNNING IN GOOGLE CLOUD PLATFORM (GCP) AND GKE ( GOOGLE KUBENETES ENGINE)
+  - Create a <a href="https://console.cloud.google.com/>GCP Account </a href>
 
 
 ## Features

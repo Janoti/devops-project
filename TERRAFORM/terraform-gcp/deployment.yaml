@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: stats-app-gke
+spec:
+  selector:
+    app: stats-app-gke
+  ports:
+  - protocol: "TCP"
+    port: 80
+    targetPort: 5000
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stats-app-deployment-gke
+spec:
+  selector:
+    matchLabels:
+      app: stats-app-gke
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: stats-app-gke
+    spec:
+      containers:
+      - name: stats-app-gke
+
+        imagePullPolicy: IfNotPresent
+        image: gcr.io/elemental-day-302121/stats
+        ports:
+        - containerPort: 5000

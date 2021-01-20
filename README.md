@@ -101,9 +101,10 @@ Here are the technologies used in this project.
        docker push gcr.io/**< your-project_id >**/stats:latest
        
    * After the modifications, do the following command:
-     > make pre-push-build
-     > make do-push
-    * A docker image of the app is created and your docker image is pushed to your Docker Hub Account and Google Image Repository.
+      > make pre-push-build
+     - A docker image of the app is created
+      > make do-push
+     - Your docker image is pushed to your Docker Hub Account and Google Image Repository.
     
    * Go to **TERRAFORM/terraform-gke**  directory
    
@@ -127,7 +128,26 @@ Here are the technologies used in this project.
    * If everything is ok, its time to APPLY:
      > terraform apply out.plan
   
-   * After 
+   * List the cluster container:
+     > gcloud container clusters list
+   
+   A similar output is show:
+    
+   | NAME | LOCATION | MASTER_VERSION |MASTER_IP | MACHINE_TYPE | NODE_VERSION | NUM_NODES | STATUS |
+   |---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+   | devops-project-cluster | us-central1 | 1.16.15-gke.6000 | 34.70.62.209 | n1-standard-1 | 1.16.15-gke.6000 | 3 | RUNNING |
+
+   * List the instances:
+    > gcloud compute instances list
+   
+   A simular output is show:
+   
+   | NAME | ZONE | MACHINE_TYPE | PREEMPTIBLE | INTERNAL_IP | EXTERNAL_IP | STATUS |
+   | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+   | gke-devops-project-c-default-node-poo-403d3662-fzg8 | us-central1-a | n1-standard-1 | | 10.128.0.2 | 35.223.67.181 | RUNNING |
+   | gke-devops-project-c-default-node-poo-9761de40-xh71 | us-central1-b | n1-standard-1 | | 10.128.0.3 | 34.122.122.63 | RUNNING |
+   | gke-devops-project-c-default-node-poo-ab784f34-qj4q | us-central1-f | n1-standard-1 | | 10.128.0.4 | 34.72.68.144 | RUNNING |
+
    
    ## Features
 

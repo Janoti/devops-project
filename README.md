@@ -171,16 +171,17 @@ Here are the technologies used in this project.
      > helm install prometheus-operator stable/prometheus-operator --namespace monitor
      
    * Verify the instalation, a similar output is show:
+   
      | NAME | READY | STATUS | RESTARTS | AGE |
      | ---- | ---- | ---- | ---- | ---- |
      | alertmanager-prometheus-operator-alertmanager-0 | 2/2 | Running | 0 | 49s |
-     |prometheus-operator-grafana-5bd6cbc556-w9lds | 2/2 | Running | 0 | 59s |
-     |prometheus-operator-kube-state-metrics-746dc6ccc-gk2p8 | 1/1 | Running | 0 | 59s |
-     |prometheus-operator-operator-7d69d686f6-wpjtd | 2/2 | Running | 0 | 59s |
-     |prometheus-operator-prometheus-node-exporter-4nwbf | 1/1 | Running | 0 | 59s |
-     |prometheus-operator-prometheus-node-exporter-jrw69 | 1/1 | Running | 0 | 59s |
-     |prometheus-operator-prometheus-node-exporter-rnqfc | 1/1 | Running | 0 | 60s |
-     |prometheus-prometheus-operator-prometheus-0 | 3/3 | Running | 1 | 39s |
+     | prometheus-operator-grafana-5bd6cbc556-w9lds | 2/2 | Running | 0 | 59s |
+     | prometheus-operator-kube-state-metrics-746dc6ccc-gk2p8 | 1/1 | Running | 0 | 59s |
+     | prometheus-operator-operator-7d69d686f6-wpjtd | 2/2 | Running | 0 | 59s |
+     | prometheus-operator-prometheus-node-exporter-4nwbf | 1/1 | Running | 0 | 59s |
+     | prometheus-operator-prometheus-node-exporter-jrw69 | 1/1 | Running | 0 | 59s |
+     | prometheus-operator-prometheus-node-exporter-rnqfc | 1/1 | Running | 0 | 60s |
+     | prometheus-prometheus-operator-prometheus-0 | 3/3 | Running | 1 | 39s |
    
    * Port-forwart the Prometheus 
      > kubectl port-forward -n monitor prometheus-prometheus-operator-prometheus-0 9090

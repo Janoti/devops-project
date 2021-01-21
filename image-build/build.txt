@@ -1,5 +1,0 @@
-#build a docker image of my app and uploads to docker repository
-
-
-docker build . -t janotijr/stats:1.0
-docher push janotijr/stats:1.0

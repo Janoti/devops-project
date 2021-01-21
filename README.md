@@ -80,7 +80,7 @@ Here are the technologies used in this project.
   |stats-k8s-7448f8cdf6-pfml7 | 1/1 | Running |  0 | 3m9s|
 
       
-## RUNNING IN GOOGLE CLOUD PLATFORM (GCP) AND GKE ( GOOGLE KUBENETES ENGINE)
+## RUNNING IN GOOGLE CLOUD PLATFORM (GCP) AND GKE (GOOGLE KUBENETES ENGINE)
    * Create a [GCP Account](https://console.cloud.google.com)
    
    * Create a new project in GCP. After the creation, save the project_id.  
@@ -199,3 +199,8 @@ Here are the technologies used in this project.
     * Click "Save & Test" to save the new data source.
 
 
+## Clean up
+
+    * In the Cloud Console, go to the Manage resources page.Go to the Manage resources page
+      In the project list, select the project that you want to delete and then click Delete delete.
+      In the dialog, type the project ID and then click Shut down to delete the project.

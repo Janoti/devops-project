@@ -57,7 +57,7 @@ Here are the technologies used in this project.
  
  * Open your browser and type: http://127.0.0.1:5000/
  
- ### Run the app locally in a Kubernetes Cluster (minikube): 
+### Run the app locally in a Kubernetes Cluster (minikube): 
  
  * Clone the repository
 
@@ -172,7 +172,7 @@ Here are the technologies used in this project.
      
    * Verify the instalation, a similar output is show:
      | NAME | READY | STATUS | RESTARTS | AGE |
-     | ---- | ---- | ---- | ---- | ----|
+     | ---- | ---- | ---- | ---- | ---- |
      | alertmanager-prometheus-operator-alertmanager-0 | 2/2 | Running | 0 | 49s |
      |prometheus-operator-grafana-5bd6cbc556-w9lds | 2/2 | Running | 0 | 59s |
      |prometheus-operator-kube-state-metrics-746dc6ccc-gk2p8 | 1/1 | Running | 0 | 59s |

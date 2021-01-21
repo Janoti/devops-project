@@ -80,7 +80,7 @@ Here are the technologies used in this project.
   |stats-k8s-7448f8cdf6-pfml7 | 1/1 | Running |  0 | 3m9s|
 
       
-## RUNNING IN GOOGLE CLOUD PLATFORM (GCP) AND GKE (GOOGLE KUBENETES ENGINE)
+## Running in GCP (Google Cloud Platform)
    * Create a [GCP Account](https://console.cloud.google.com)
    
    * Create a new project in GCP. After the creation, save the project_id.  

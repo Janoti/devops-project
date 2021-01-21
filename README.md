@@ -161,6 +161,7 @@ Here are the technologies used in this project.
      > kubectl describe svc stats-app-gke | grep 'LoadBalancer Ingress'
     
 ## Monitoring Kubernetes using Grafana and Prometheus (manual install)
+
    * Install Helm:
      > curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 chmod 700 get_helm.sh ./get_helm.sh
      
@@ -170,7 +171,7 @@ Here are the technologies used in this project.
    * Install Prometheus:
      > helm install prometheus-operator stable/prometheus-operator --namespace monitor
      
-   * Verify the instalation, a similar output is show:
+   Verify the instalation, a similar output is show:
    
    | NAME | READY | STATUS | RESTARTS | AGE |
    | ---- | ---- | ---- | ---- | ---- |

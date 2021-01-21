@@ -4,14 +4,14 @@ data "google_client_config" "default" {}
 ## Terraform backend config
 terraform {
   backend "gcs" {
-    bucket = "tfstate-elemental-day-302121"
+    bucket = "bk-devops-project2-302201"
     prefix = "states"
     credentials = "service-account.json"
   }
 }
 
 ## Variables
-variable "project" {default = "elemental-day-302121"}
+variable "project" {default = "devops-project2-302201"}
 variable "region" { default = "us-central1" }
 variable "cluster_name" {default= "devops-project-cluster"}
 variable "network" { default = "default" }

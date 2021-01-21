@@ -184,7 +184,7 @@ Here are the technologies used in this project.
    | prometheus-operator-prometheus-node-exporter-rnqfc | 1/1 | Running | 0 | 60s |
    | prometheus-prometheus-operator-prometheus-0 | 3/3 | Running | 1 | 39s |
    
-   * Port-forwart the Prometheus 
+   * Port-forward the Prometheus 
      > kubectl port-forward -n monitor prometheus-prometheus-operator-prometheus-0 9090
    * Port-forward Grafana
      > kubectl port-forward $(kubectl get pods --selector=app=grafana -n monitor --output=jsonpath="{.items..metadata.name}") -n monitor 3000
@@ -201,7 +201,7 @@ Here are the technologies used in this project.
     * Click "Save & Test" to save the new data source.
 
 
-## Clean up
+## Clean up (save money in GCP)
 
     * In the Cloud Console, go to the Manage resources page.Go to the Manage resources page
       In the project list, select the project that you want to delete and then click Delete delete.

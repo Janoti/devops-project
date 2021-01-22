@@ -47,6 +47,21 @@ Here are the technologies used in this project.
 
 ## How to use
 
+### App Routes
+
+ * "/" - Show stats of your computer using psutil lib
+ * "/login" - Show a login screen (no use)
+ * "/users" - show a list of users created in memory 
+ * "/users/ <cpf> " - search user by cpf
+ * To insert a new user, replace the itens: 
+
+     > curl --location --request POST 'http://<ip-load-balancer(GCP)-or-localhost(Docker/K8s)>/users' \--header 'Content-Type: application/json' \--data-raw '{
+     "nome": "InsiraSeuNome",
+     "sobrenome": "InsiraSeu Sobrenome",
+     "cpf": 122312321321,
+     "email": "ninguemusa@yahoo.com.br",
+     "data_nasc": "19/01/1989"}' 
+     
 ### Run the app with Docker locally:
 
  * Clone the repository
@@ -64,10 +79,9 @@ Here are the technologies used in this project.
  * Inside app directory, run:
 
    >  $ make k8s 
- 
-   
+    
  * Run the following command to make sure if everything is working:
-  
+
    >  $ kubectl get pods
    
  * An similar output is show:
@@ -137,7 +151,7 @@ Here are the technologies used in this project.
    * If everything is ok, its time to APPLY:
      > terraform apply out.plan
       
-   *  After all infra is created, deploy the Load Balancer and 4 replicas of our app:
+   * After all infra is created, deploy the Load Balancer and 4 replicas of our app:
      > make -f Makefile
      
    * Use kubectl commands to explore and manage your pods

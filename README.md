@@ -33,13 +33,13 @@ Here are the technologies used in this project.
 ## Services Used
 
 * Github
-* Docker Hub (https://hub.docker.com/repository/docker/janotijr/devops-project)
+* [Docker Hub](https://hub.docker.com/repository/docker/janotijr/devops-project)
 * IBM Cloud
 * GCP (Google Cloud Plataform) and GKE (Google Kubernetes Engine)
 
 
 ## Getting started
-* Install Kubernetes and minikube, follow the official tutorial >  https://minikube.sigs.k8s.io/docs/start/
+* Install Kubernetes and minikube, [follow the official tutorial](https://minikube.sigs.k8s.io/docs/start/)
 * Install [Helm](https://helm.sh/docs/intro/install/)
 * Install an hypervisor, like Virtualbox.
 * Install [Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)

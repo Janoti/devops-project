@@ -94,7 +94,7 @@ Here are the technologies used in this project.
    
    * Create a **Bucket** to save Terraform states. Save the bucket name.
    
-   * Go to **root directory** of the cloned repository(devops-project), edit the **MakeFile** and modify the following itens:
+   * Go to **app directory** of the cloned repository(devops-project), edit the **MakeFile** and modify the following itens:
    
     * pre-push-build:
        eval $(minikube docker-env)
@@ -111,7 +111,7 @@ Here are the technologies used in this project.
       > make pre-push-build
      - A docker image of the app is created
       > make do-push
-     - Your docker image is pushed to your Docker Hub Account and Google Image Repository.
+     - Your docker image is pushed to your Docker Hub Account and Google Image Repository.root
     
    * Go to **TERRAFORM/terraform-gke**  directory
    
@@ -136,7 +136,12 @@ Here are the technologies used in this project.
     
    * If everything is ok, its time to APPLY:
      > terraform apply out.plan
-  
+      
+   *  After all infra is created, deploy the Load Balancer and 4 replicas of our app:
+     > make -f Makefile
+     
+   * Use kubectl commands to explore and manage your pods
+   
    * List the cluster container:
      > gcloud container clusters list
    

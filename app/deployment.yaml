@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: stats
-        imagePullPolicy: IfNotPresent
-        image: janotijr/devops-project:latest
+        imagePullPolicy: Always
+        image: janotijr/devops-project-1:latest
         ports:
         - containerPort: 5000

@@ -79,6 +79,8 @@ Here are the technologies used in this project.
  * Inside app directory, run:
 
    >  $ make k8s 
+
+ * In deployment.yaml, imagePullPolicy is set to  ** Always*, forcing pull latest image in Docker Hub. 
     
  * Run the following command to make sure if everything is working:
 

@@ -1,6 +1,6 @@
 pre-push-build:
 	eval $(minikube docker-env)
-	docker build ./ -t janotijr/devops-project:latest
+	docker build ./ -t janotijr/devops-project-1:latest
 
 local:
 	eval $(minikube docker-env)
@@ -9,9 +9,9 @@ local:
 
 do-push:
 	eval $(minikube docker-env)
-	docker push janotijr/devops-project
-	docker tag janotijr/devops-project gcr.io/devops-project2-302201/stats:latest
-	docker push gcr.io/devops-project2-302201/stats:latest
+	docker push janotijr/devops-project-1
+	#docker tag janotijr/devops-project gcr.io/devops-project2-302201/stats:latest
+	#docker push gcr.io/devops-project2-302201/stats:latest
 k8s:
 	eval $(minikube docker-env)
 	minikube start --vm-driver=virtualbox
@@ -19,12 +19,14 @@ k8s:
 	kubectl expose deployment stats-k8s --type=NodePort --port=5000
 	minikube service stats-k8s 
 
+
 clean_k8s:
 	kubectl delete deployment stats-k8s	
 	kubectl delete service stats-k8s
 
 clean_docker:
 	docker image rm stats -f
+	docker image rm janotijr/devops-project-1 -f
 
 
 git:

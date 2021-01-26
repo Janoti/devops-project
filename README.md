@@ -192,6 +192,9 @@ Here are the technologies used in this project.
    * Install Prometheus:
      > helm install prometheus-operator stable/prometheus-operator --namespace monitor
      
+   * List the Pods of Prometheus anda Grafana:
+     > kubectl --namespace monitor get pods
+     
    Verify the instalation, a similar output is show:
    
    | NAME | READY | STATUS | RESTARTS | AGE |

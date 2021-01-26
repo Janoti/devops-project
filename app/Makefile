@@ -10,8 +10,8 @@ local:
 do-push:
 	eval $(minikube docker-env)
 	docker push janotijr/devops-project-1
-	#docker tag janotijr/devops-project gcr.io/devops-project2-302201/stats:latest
-	#docker push gcr.io/devops-project2-302201/stats:latest
+	docker tag janotijr/devops-project-1 gcr.io/devops-project-302901/stats:latest
+	docker push gcr.io/devops-project-302901/stats:latest
 k8s:
 	eval $(minikube docker-env)
 	minikube start --vm-driver=virtualbox

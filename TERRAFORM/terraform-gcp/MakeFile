@@ -1,3 +1,0 @@
-build:
-	gcloud container clusters get-credentials devops-project-cluster --region us-central1
-	kubectl apply --filename deployment.yaml

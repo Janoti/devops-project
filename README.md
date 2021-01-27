@@ -149,12 +149,14 @@ Here are the technologies used in this project.
    
    * Execute the command to save the Terraform Plan in a file (out.plan)
      > terraform plan -out out.plan
+     > or make plan
     
    * If everything is ok, its time to APPLY:
      > terraform apply out.plan
+     > or make apply
       
    * After all infra is created, deploy the Load Balancer and 4 replicas of our app:
-     > make -f Makefile
+     > make build
      
    * Use kubectl commands to explore and manage your pods
    

@@ -229,37 +229,25 @@ Here are the technologies used in this project.
 
 ## Jenkins with Google Cloud Platform
 #  With YAML Files
-    * Go to jenkins folder
-    * Run:
-      > make create
-    * This command will create a namespace jenkins and deploy jenkins
+   * Go to jenkins folder
+   * Run:
+     > make create
+   * This command will create a namespace jenkins and deploy jenkins
 
-    * You can validade if is everything ok with:
-      > make validate
+   * You can validade if is everything ok with:
+     > make validate
     
-    * Create a service, in this case, a loadBalancer to access jenkins
-      > make create-service
-    * Wait for the creation os the service and the external IP
-      > make validate-service
+   * Create a service, in this case, a loadBalancer to access jenkins
+     > make create-service
+   * Wait for the creation os the service and the external IP
+     > make validate-service
 
-    * The initial user and password of jenkins:
-      > kubectl get pods -n jenkins
-      > kubectl logs <pod-name> -n jenkins
+   * The initial user and password of jenkins:
+     > kubectl get pods -n jenkins
+     > kubectl logs <pod-name> -n jenkins
 
 
-create:
-        #kubectl create namespace jenkins
-        kubectl create -f jenkins-deployment.yaml -n jenkins
 
-validate:
-        kubectl get deployments -n jenkins
-
-create-service:
-        kubectl create -f jenkins-service.yaml -n jenkins
-
-validate-service:
-        kubectl get services -n jenkins
- 
 ## Distributed load testing using Google Kubernetes Engine and LOCUST
 
 

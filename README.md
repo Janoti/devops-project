@@ -106,11 +106,12 @@ Here are the technologies used in this project.
    * Login GCE
      > gcloud auth login
    
-   * For this project, i use Google Service Account with permissions to write to the storage bucket used by Terraform to save the states. To create, in GCP, go to IAM -> Service Account. Follow the default steps to create the account. Select the account and generate a private key in json format (Actions button). Save the file with the name **service-account.json** in TERRAFORM/terraform-gke folder.
+   * Create a service account in GCP with permissions to write to the storage bucket used by Terraform to save the states: 
+     > Go to IAM -> Service Account. Follow the default steps to create the account. Select the account and generate a private key in json format (Actions button). Save the file with the name **service-account.json** in TERRAFORM/terraform-gke folder.
    
    * Create a **Bucket** to save Terraform states. Save the bucket name.
    
-   * Go to **app directory** of the cloned repository(devops-project), edit the **MakeFile** and modify the following itens:
+   * Go to **app directory** and edit the **MakeFile** and modify the following itens:
    
     * pre-push-build:
        eval $(minikube docker-env)

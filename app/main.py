@@ -63,7 +63,7 @@ def index():
 
 @app.route("/login")
 def login():
-    hello = "Criar uma tela de login"
+    hello = "Criar uma tela de login (todo)"
     return render_template('login.html', hello=hello)
 
 @app.route("/users") 

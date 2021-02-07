@@ -29,7 +29,7 @@ spec:
       containers:
       - name: stats-app-gke
 
-        imagePullPolicy: IfNotPresent
-        image: gcr.io/devops-project-303501/stats
+        imagePullPolicy: "Always"
+        image: gcr.io/devops-project-304014/stats:latest
         ports:
         - containerPort: 5000

@@ -131,9 +131,9 @@ Here are the technologies used in this project.
     
    * Go to **TERRAFORM/terraform-gke**  directory
    
-   * Edit the **main.tf file**, and modify the following itens:
+   * Edit the **variables.tf file**, and modify the following itens:
    
-    * bucket = **< name-of-your-bucket >**
+    * variable bucket = {default = **< name-of-your-bucket >**}
     * variable "project" {default = **< project_id >**}
     * variable "region" {default= **< your_project_region >**}
     * variable "cluster_name" {default = **< name_your_cluster >**}
@@ -143,20 +143,16 @@ Here are the technologies used in this project.
     * gcloud container clusters get-credentials **< your-cluster-name >** --region **< your-project-region >**
    
    * After the modifications, do the following command:
-     > terraform init
+     > make plan
+     
+     > make apply
+     
+   * After all infra is created, deploy the Load Balancer and 4 replicas of our app:
+
+     > make build
     
    * Make sure to activate the Kubernetes Engine API  and Compute Engine API in your project
-   
-   * Execute the command to save the Terraform Plan in a file (out.plan)
-     > terraform plan -out out.plan
-     > or make plan
-    
-   * If everything is ok, its time to APPLY:
-     > terraform apply out.plan
-     > or make apply
-      
-   * After all infra is created, deploy the Load Balancer and 4 replicas of our app:
-     > make build
+ 
      
    * Use kubectl commands to explore and manage your pods
    
@@ -181,7 +177,8 @@ Here are the technologies used in this project.
    | gke-devops-project-c-default-node-poo-ab784f34-qj4q | us-central1-f | n1-standard-1 | | 10.128.0.4 | 34.72.68.144 | RUNNING |
 
    * To expose the IP Address of Load Balancer and access the application, do the following:
-     > kubectl describe svc stats-app-gke | grep 'LoadBalancer Ingress'
+     > make service-ip
+     
     
 ## Monitoring Kubernetes using Grafana and Prometheus (manual install)
 

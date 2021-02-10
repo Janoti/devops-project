@@ -110,24 +110,19 @@ Here are the technologies used in this project.
    
    * Create a **Bucket** to save Terraform states. Save the bucket name.
    
-   * Go to **app directory** and edit the **MakeFile** and modify the following itens:
+   * Go to **app directory**, edit the **MakeFile** and modify the following itens:
    
-    * pre-push-build:
-       eval $(minikube docker-env)
-       docker build ./ -t **< your-docker-user >**/**< your-project-name >**:latest
-
-
-     * do-push:
-       eval $(minikube docker-env)
-       docker push **< your-docker-user >**/**< your-project-name>**
-       docker tag **< your-docker-user >**/**< your-project-name >** gcr.io/**< your-project_id >**/stats:latest
-       docker push gcr.io/**< your-project_id >**/stats:latest
+    * variables:
+       img-name := <your-image-name>
+       project-name := <your-project-name>
+       docker-repo := <your-docker-repository>
        
    * After the modifications, do the following command:
-      > make pre-push-build
+      > make pre-push-build 
      - A docker image of the app is created
-      > make do-push
-     - Your docker image is pushed to your Docker Hub Account and Google Image Repository.root
+
+      > make do-push version="version-of-your-app"
+     - Your docker image is pushed to your Docker Hub Account and Google Image Repository
     
    * Go to **TERRAFORM/terraform-gke**  directory
    

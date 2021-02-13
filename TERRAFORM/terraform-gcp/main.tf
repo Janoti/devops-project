@@ -1,10 +1,11 @@
 ## Data Sources
 data "google_client_config" "default" {}
 
+
 ## Terraform backend config
 terraform {
   backend "gcs" {
-    bucket = var.bucket
+    bucket = "bk-devops-project-123456"
     prefix = "states"
     credentials = "service-account.json"
   }

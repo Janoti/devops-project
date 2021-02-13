@@ -6,4 +6,4 @@ variable "network" { default = "default" }
 variable "subnetwork" { default = "" }
 variable "ip_range_pods" { default = "" }
 variable "ip_range_services" { default = "" }
-#variable "bucket" { default = "bk-devops-304501" }
+variable "name" { default = "bk-devops-project-123456" }

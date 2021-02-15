@@ -1,10 +1,14 @@
 #variables
 #tag-gcp :=tag your docker img
 img-name := stats
-project-name := devops-304700
+project-name := devops-304912
 #version := version img docker
 docker-repo := janotijr/devops-project-1
 namespace = "application"
+
+
+delete-project:
+	gcloud projects delete $(project-name)
 
 img-update-gke:
 	kubectl set image deployment stats-app-deployment-gke stats-app-gke=gcr.io/$(project-name)/$(img-name):$(version)
@@ -60,7 +64,7 @@ clean_docker:
 
 git:
 	sudo git add *
-	sudo git commit -m "Automatico"
+	sudo git commit -m "$(comment)"
 	sudo git push origin master
 
 help:

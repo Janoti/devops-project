@@ -14,7 +14,7 @@ spec:
         app: stats
     spec:
       containers:
-      - name: stats-container
+      - name: stats
         imagePullPolicy: Always
         image: janotijr/devops-project-1:latest
         ports:

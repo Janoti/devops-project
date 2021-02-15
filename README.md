@@ -67,7 +67,7 @@ Here are the technologies used in this project.
 
  * Inside app directory, run:
 
-   >  $ make local
+   >  $ make local img-name=<name-imagem>
  
  * Open your browser and type: http://127.0.0.1:5000/
  
@@ -108,9 +108,11 @@ Here are the technologies used in this project.
    * Create a service account in GCP with permissions to write to the storage bucket used by Terraform to save the states: 
      > Go to IAM -> Service Account. Follow the default steps to create the account. Select the account and generate a private key in json format (Actions button). Save the file with the name **service-account.json** in TERRAFORM/terraform-gke folder.
    
-   * Create a **Bucket** to save Terraform states. Save the bucket name.
-   
-   * Go to **app directory**, edit the **MakeFile** and modify the following itens:
+   * Go to **TERRAFORM/terraform-gcp/bucket** and create a **Bucket** to save Terraform states.
+      > make bucket
+
+   * Go to **app**  directory
+   * Edit the **MakeFile** and modify the following itens:
    
     * variables:
        img-name := <your-image-name>

@@ -30,6 +30,6 @@ spec:
       - name: stats-app-gke
 
         imagePullPolicy: "Always"
-        image: gcr.io/devops-304700/stats:6
+        image: gcr.io/devops-304912/stats:6
         ports:
         - containerPort: 5000

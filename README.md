@@ -108,7 +108,7 @@ Here are the technologies used in this project.
    * Create a service account in GCP with permissions to write to the storage bucket used by Terraform to save the states: 
      > Go to IAM -> Service Account. Follow the default steps to create the account. Select the account and generate a private key in json format (Actions button). Save the file with the name **service-account.json** in TERRAFORM/terraform-gke folder.
    
-   * Go to **TERRAFORM/terraform-gcp/bucket** and create a **Bucket** to save Terraform states.
+   * Go to **TERRAFORM/terraform-gcp/bucket** and create a **Bucket** to save Terraform states. Modify **variables.tf** with your project values. After, run:
       > make bucket
 
    * Go to **app**  directory
@@ -130,23 +130,21 @@ Here are the technologies used in this project.
    
    * Edit the **variables.tf file**, and modify the following itens:
    
-    * variable bucket = {default = **< name-of-your-bucket >**}
     * variable "project" {default = **< project_id >**}
     * variable "region" {default= **< your_project_region >**}
-    * variable "cluster_name" {default = **< name_your_cluster >**}
- 
+     
    * Edit the **MakeFile** file, and modify the following itens:
      
     * gcloud container clusters get-credentials **< your-cluster-name >** --region **< your-project-region >**
    
    * After the modifications, do the following command:
-     > make plan
+     > make plan .
      
-     > make apply
+     > make apply .
      
    * After all infra is created, deploy the Load Balancer and 4 replicas of our app:
 
-     > make build
+     > make build 
     
    * Make sure to activate the Kubernetes Engine API  and Compute Engine API in your project
  
@@ -176,7 +174,9 @@ Here are the technologies used in this project.
    * To expose the IP Address of Load Balancer and access the application, do the following:
      > make service-ip
      
-    
+  #Update a Docker Image in GKE
+
+  
 ## Monitoring Kubernetes using Grafana and Prometheus (manual install)
 
    * Install Helm:

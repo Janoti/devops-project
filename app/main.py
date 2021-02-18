@@ -3,6 +3,7 @@ import psutil
 import datetime
 import platform
 import os
+import database.banco
 
 app = Flask(__name__)
 port = int(os.environ.get("PORT", 5000))
@@ -34,8 +35,9 @@ users = [ # Array of dictionaries. Memory Database of users
 
 @app.route("/")
 def index():
-    cpu_stats = psutil.cpu_stats()  # Retorna estatisticas da CPU:
-    print(cpu_stats)
+    #rows  = 0 
+   # cpu_stats = psutil.cpu_stats()  # Retorna estatisticas da CPU:
+    #print(cpu_stats)
 
     # ctx_switches: number of context switches (voluntary + involuntary) since boot.
     # /interrupts: number of interrupts since boot.
@@ -55,11 +57,32 @@ def index():
     #print(boot)
 
     # biblioteca Platform. plataform.uname retorna 6 atributos (system, node, release, version, machine e processor)
-    system, node, release, version, arch, processor = platform.uname()
-    system = system.split('-')[0]
+    system = platform.system()
+    node = platform.node()
+    release = platform.release()
+    version = platform.version()
+    py_ver = platform.python_version()
+    proc = platform.processor()
 
-    #print("Machine OS: {} \nNode: {} \nRelease: {} \nVersion {} \nArchiteture: {} \nProcessor: {} ".format(system, node, release,version, arch, processor))
-    return render_template('stats.html', physical=physical, logical=logical, boot=boot, system=system, node=node, release=release, version=version,arch=arch, processor=processor)
+
+    conn = database.banco.create_connection()
+    database.banco.create_table(conn)
+
+    if conn is not None:
+        counter = database.banco.insert_table(conn, physical, logical, boot, system, node, release, version, py_ver, proc)
+    else:
+        print ("ERROR")
+
+    # database.banco.print_data()
+  
+    #print("Machine OS: {} \nNode: {} \nRelease: {} \nVersion {} \nArchiteture: {} \nProcessor: {} ".format(system, node, release,version, py_ver, processor))
+    return render_template('stats.html', counter = counter, physical=physical, logical=logical, boot=boot, system=system, node=node, release=release, version=version,py_ver=py_ver, proc=proc)
+
+@app.route("/db")
+def db_list():
+   conn = database.banco.create_connection()
+   rows =  database.banco.print_data(conn)
+   return render_template('database.html', rows = rows)
 
 @app.route("/login")
 def login():

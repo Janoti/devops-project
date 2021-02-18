@@ -174,9 +174,19 @@ Here are the technologies used in this project.
    * To expose the IP Address of Load Balancer and access the application, do the following:
      > make service-ip
      
-  #Update a Docker Image in GKE
+  # Update a Docker Image in GKE
+   
+   * After modifications in main.py, you should rebuild the new docker image of app and update the pods and repositories with the new image. Assuming that you already made the alterations in the variables in MakeFile, do the following:
 
-  
+   * Build the new image (inside /app directory):
+     > make pre-push-build img-name="<name-docker-image>"
+
+     > make do-push version="tag-or-version"
+
+     > make img-update-gke version="tag-or-version"
+
+   * After that, a Rolling-update will occur, destroying the old pods and replacing with the new ones.
+
 ## Monitoring Kubernetes using Grafana and Prometheus (manual install)
 
    * Install Helm:

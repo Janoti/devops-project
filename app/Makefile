@@ -1,7 +1,7 @@
 #variables
 #tag-gcp :=tag your docker img
 img-name := stats
-project-name := devops-304912
+project-name := devops-304915
 #version := version img docker
 docker-repo := janotijr/devops-project-1
 namespace = "application"

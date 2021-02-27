@@ -1,10 +1,15 @@
 #variables
 #tag-gcp :=tag your docker img
 img-name := stats
-project-name := devops-304915
-#version := version img docker
+project-name := lateral-booking-306120
+version := testes
 docker-repo := janotijr/devops-project-1
 namespace = "application"
+
+create-user-dashboard:
+	cat <<EOF | kubectl apply -f - 
+	apiVersion: v1 kind: ServiceAccount metadata:  name: admin-user  namespace: kubernetes-dashboard EOF
+
 
 
 delete-project:

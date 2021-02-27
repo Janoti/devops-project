@@ -1,5 +1,5 @@
 ## Variables
-variable "project" {default = "devops-304915"}
+variable "project" {default = "lateral-booking-306120"}
 variable "region" { default = "us-central1" }
 variable "cluster_name" {default= "devops-project-cluster"}
 variable "network" { default = "default" }

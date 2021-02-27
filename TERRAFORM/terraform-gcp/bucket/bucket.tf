@@ -5,9 +5,7 @@ resource "google_storage_bucket" "bucket" {
   storage_class = "REGIONAL"
   project = var.project
 
-
-
-
-versioning { enabled = true}
+  versioning { enabled = true}
 
 }
+

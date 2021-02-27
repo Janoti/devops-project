@@ -230,6 +230,18 @@ Here are the technologies used in this project.
     * Adjust other data source settings as desired (Http Access = Browser).
     * Click "Save & Test" to save the new data source.
 
+## Kubernetes Dashboard
+
+   * We are creating Service Account with name **admin-user** in namespace **kubernetes-dashboard** first.
+
+     > cat <<EOF | kubectl apply -f -
+       apiVersion: v1
+       kind: ServiceAccount
+       metadata:
+         name: admin-user
+         namespace: kubernetes-dashboard
+       EOF
+
 
 ## Jenkins with Google Cloud Platform
 #  With YAML Files

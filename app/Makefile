@@ -6,11 +6,6 @@ version := testes
 docker-repo := janotijr/devops-project-1
 namespace = "application"
 
-create-user-dashboard:
-	cat <<EOF | kubectl apply -f - 
-	apiVersion: v1 kind: ServiceAccount metadata:  name: admin-user  namespace: kubernetes-dashboard EOF
-
-
 
 delete-project:
 	gcloud projects delete $(project-name)

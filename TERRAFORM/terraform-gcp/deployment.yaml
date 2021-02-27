@@ -30,6 +30,6 @@ spec:
       - name: stats-app-gke
 
         imagePullPolicy: "Always"
-        image: gcr.io/devops-304912/stats:6
+        image: gcr.io/lateral-booking-306120/stats:6
         ports:
         - containerPort: 5000

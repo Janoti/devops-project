@@ -235,12 +235,12 @@ Here are the technologies used in this project.
    * We are creating Service Account with name **admin-user** in namespace **kubernetes-dashboard** first.
 
      > cat <<EOF | kubectl apply -f -
-       apiVersion: v1
-       kind: ServiceAccount
-       metadata:
-         name: admin-user
-         namespace: kubernetes-dashboard
-       EOF
+     >  apiVersion: v1
+     >  kind: ServiceAccount
+     >  metadata:
+     >    name: admin-user
+     >    namespace: kubernetes-dashboard
+     >  EOF
 
 
 ## Jenkins with Google Cloud Platform

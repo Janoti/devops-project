@@ -1,6 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
+  labels:
+    app: stats-app-gke
   name: stats-app-gke
 spec:
   selector:
@@ -30,6 +32,6 @@ spec:
       - name: stats-app-gke
 
         imagePullPolicy: "Always"
-        image: gcr.io/lateral-booking-306120/stats:6
+        image: gcr.io/devops-306215/stats:1
         ports:
         - containerPort: 5000

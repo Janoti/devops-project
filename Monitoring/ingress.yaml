@@ -1,0 +1,9 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: kube-system
+  name: kibana-logging
+spec:
+  backend:
+    serviceName: kibana-logging
+    servicePort: 5601

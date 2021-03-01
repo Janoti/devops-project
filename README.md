@@ -1,10 +1,13 @@
 ## Devops Project
  Criado um app inicial, usando python e flask com as libs psutil. Serão feitas várias versões desse app.
- O intuito é criar um projeto devops, automatizado, com o passo a passo descrito nesse README
+ O intuito é criar um projeto devops, automatizado, com o passo a passo descrito nesse README.
+ * Run the app with Docker locally
+ * Run the app locally in a Kubernetes Cluster (minikube)
+ * Running in GCP (Google Cloud Platform)
+ * Monitoring Kubernetes using Grafana and Prometheus
+ * Kubernetes Dashboard
+ * Distributed load testing using Kubernetes Engine and LOCUST
 
-## Versioning
-
-1.0.0.2
 
 
 ## Authors
@@ -24,10 +27,11 @@ Here are the technologies used in this project.
 * flask 1.1.2
 * docker 20.10.2
 * terraform 0.14.4
-* kubernetes 1.16.15-gke.6000
+* kubernetes 1.17.15-gke.800
 * Grafana and Prometheus for monitoring
 * Helm
 * Jenkins
+* Kubernetes Dashboard
 
 ## Services Used
 
@@ -61,7 +65,7 @@ Here are the technologies used in this project.
      "email": "ninguemusa@yahoo.com.br",
      "data_nasc": "19/01/1989"}' 
      
-### Run the app with Docker locally:
+# Run the app with Docker locally:
 
  * Clone the repository
 
@@ -71,7 +75,7 @@ Here are the technologies used in this project.
  
  * Open your browser and type: http://127.0.0.1:5000/
  
-### Run the app locally in a Kubernetes Cluster (minikube): 
+# Run the app locally in a Kubernetes Cluster (minikube): 
  
  * Clone the repository
 
@@ -95,7 +99,7 @@ Here are the technologies used in this project.
   |stats-k8s-7448f8cdf6-pfml7 | 1/1 | Running |  0 | 3m9s|
 
       
-## Running in GCP (Google Cloud Platform)
+# Running in GCP (Google Cloud Platform)
    * Create a [GCP Account](https://console.cloud.google.com)
    
    * Create a new project in GCP. After the creation, save the project_id.  
@@ -173,8 +177,9 @@ Here are the technologies used in this project.
 
    * To expose the IP Address of Load Balancer and access the application, do the following:
      > make service-ip
-     
-  # Update a Docker Image in GKE
+  
+
+  ## Update a Docker Image in GKE
    
    * After modifications in main.py, you should rebuild the new docker image of app and update the pods and repositories with the new image. Assuming that you already made the alterations in the variables in MakeFile, do the following:
 
@@ -187,16 +192,18 @@ Here are the technologies used in this project.
 
    * After that, a Rolling-update will occur, destroying the old pods and replacing with the new ones.
 
-## Monitoring Kubernetes using Grafana and Prometheus (manual install)
+# Monitoring Kubernetes using Grafana and Prometheus (manual install)
+   
+   * Go to **Monitoring** directory
 
-   * Install Helm:
-     > curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 chmod 700 get_helm.sh ./get_helm.sh
-     
+   * If **Helm** not already installed, run :
+     > make helm-install
+
    * For good pratice, install Prometheus containers in separeted namespace:
-     > kubectl create ns monitor
+     > make namespace
      
    * Install Prometheus:
-     > helm install prometheus-operator stable/prometheus-operator --namespace monitor
+     > make prometheus
      
    * List the Pods of Prometheus anda Grafana:
      > kubectl --namespace monitor get pods
@@ -215,9 +222,10 @@ Here are the technologies used in this project.
    | prometheus-prometheus-operator-prometheus-0 | 3/3 | Running | 1 | 39s |
    
    * Port-forward the Prometheus 
-     > kubectl port-forward -n monitor prometheus-prometheus-operator-prometheus-0 9090
+     > make pf-prometheus
+
    * Port-forward Grafana
-     > kubectl port-forward $(kubectl get pods --selector=app=grafana -n monitor --output=jsonpath="{.items..metadata.name}") -n monitor 3000
+     > make pf-grafana
 
    * Access http://127.0.0.1:3000 (Grafana). Login: **admin** and Password: **prom-operator**
    
@@ -307,7 +315,7 @@ Here are the technologies used in this project.
 
 
 
-## Distributed load testing using Google Kubernetes Engine and LOCUST
+## Distributed load testing using Kubernetes Engine and LOCUST
 
 
 ## Clean up (save money in GCP)

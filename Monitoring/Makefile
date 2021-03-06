@@ -32,3 +32,10 @@ create kibana:
 
 create-statefulset:
 	kubectl create -f elasticsearch_statefulset.yaml -n logging
+
+
+#### ELK Stack with Helm ####	
+
+ElasticSearch_install:
+	#curl -O https://raw.githubusercontent.com/elastic/Helm-charts/master/elasticsearch/examples/minikube/values.yaml
+	helm install --name elasticsearch elastic/elasticsearch -f ./values.yaml 

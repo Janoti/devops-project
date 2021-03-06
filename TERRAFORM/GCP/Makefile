@@ -13,6 +13,7 @@ build:
 
 service-ip:
 	kubectl describe svc stats-app-gke | grep 'LoadBalancer Ingress'	
+
 	
 help:
 	@echo ''

@@ -84,7 +84,8 @@ Here are the technologies used in this project.
    >  $ make k8s 
 
  * In deployment.yaml, imagePullPolicy is set to  ** Always*, forcing pull latest image in Docker Hub. 
-    
+
+ 
  * Run the following command to make sure if everything is working:
 
    >  $ kubectl get pods
@@ -98,7 +99,7 @@ Here are the technologies used in this project.
   |stats-k8s-7448f8cdf6-hhrcr | 1/1 | Running |  0 | 3m9s|
   |stats-k8s-7448f8cdf6-pfml7 | 1/1 | Running |  0 | 3m9s|
 
-      
+     
 # Running in GCP (Google Cloud Platform)
    * Create a [GCP Account](https://console.cloud.google.com)
    

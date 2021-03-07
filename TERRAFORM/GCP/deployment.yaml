@@ -32,6 +32,6 @@ spec:
       - name: stats-app-gke
 
         imagePullPolicy: "Always"
-        image: gcr.io/devops-306215/stats:1
+        image: gcr.io/avian-concord-306817/stats:1
         ports:
         - containerPort: 5000

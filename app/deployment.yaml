@@ -2,6 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: application
   name: stats-k8s
 spec:
   selector:
@@ -21,6 +22,24 @@ spec:
         - containerPort: 5000
         resources:
           limits:
-            cpu: 500m
+            cpu: 4m
           requests:
-            cpu: 200m
+            cpu: 4m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: application
+  labels:
+    app: stats
+  name: stats-k8s
+spec:
+  selector:
+    app: stats
+  ports:
+  - protocol: "TCP"
+    port: 80
+    targetPort: 5000
+  type: NodePort
+
+  

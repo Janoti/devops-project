@@ -5,7 +5,7 @@ data "google_client_config" "default" {}
 ## Terraform backend config
 terraform {
   backend "gcs" {
-    bucket = "bk-devops-project-112344"
+    bucket = "bk-devops-project-11234444"
     prefix = "states"
     credentials = "service-account.json"
   }
@@ -16,7 +16,7 @@ terraform {
 ## GKE Cluster
 module "gke" {
   source  = "terraform-google-modules/kubernetes-engine/google"
-  version = "9.3.0"
+  version = "12.2.0"
 
   # required variables
   project_id        = var.project

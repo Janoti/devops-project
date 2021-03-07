@@ -1,6 +1,6 @@
 #### VARIABLES ####
 img-name := stats
-project-name := devops-306215
+project-name := avian-concord-306817
 version := 1
 docker-repo := janotijr/devops-project-1
 namespace = "application"
@@ -56,8 +56,7 @@ k8s: # Roda a app localmente em um cluster k8s. Cria o namespace e expõe a app.
 	kubectl create namespace $(namespace)
 	kubectl apply -f deployment.yaml --namespace=$(namespace) --record
 	kubectl apply -f ingress.yaml --namespace=$(namespace)
-	kubectl expose deployment stats-k8s --type=NodePort --port=5000 --namespace=$(namespace)
-	minikube service stats-k8s --namespace=$(namespace)
+	kubectl describe ingress -n application |grep Address
 
 
 scale: # Escala localmente a app. Aumentando ou diminuindo o números de réplicas
@@ -98,3 +97,7 @@ help:
 	@echo '  k8s		        build a local kubernetes cluster with minikube'
 	@echo '  clean_k8s             remove deployment and services from minikube'
 	@echo '  clean_docker          remove docker image'
+
+
+#kubectl expose deployment stats-k8s --type=NodePort --port=5000 --namespace=$(namespace)
+#inikube service stats-k8s --namespace=$(namespace)
